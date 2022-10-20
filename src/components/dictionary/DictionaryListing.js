@@ -25,13 +25,13 @@ const DictionaryListing = (props) => {
   if (props.result.data) {
     renderedHTML =
     props.result.data &&
-    props.result.data.slice(0, 100).map((word) => (
+    props.result.data.map((word) => (
       <WordCard dictionaryWord={word}/>
       ));
   } else {
     renderedHTML =
       allWords.data &&
-      allWords.data.slice(0, 100).map((word) => (
+      allWords.data.map((word) => (
         <WordCard dictionaryWord={word}/>
       ));
   }
