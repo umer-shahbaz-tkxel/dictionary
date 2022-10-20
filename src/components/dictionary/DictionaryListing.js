@@ -15,6 +15,7 @@ const DictionaryListing = (props) => {
     ).then((response) => response.json());
 
     setAllWords(response || []);
+    props.onHide();
   };
 
   useEffect(() => {

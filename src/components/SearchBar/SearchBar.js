@@ -14,9 +14,11 @@ const SearchBar = (props) => {
     ).then((response) => response.json());
     setSearchResult(response || []);
     props.setSearchResults(searchResult);
+    props.onHide();
   };
 
   const formSubmitHandler = (event) => {
+    props.onShow();
     event.preventDefault();
     let searchKeyword = enterKeyword.current.value;
     if (searchKeyword.trim().length > 0) {

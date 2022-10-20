@@ -22,7 +22,8 @@ const AddNewWord = (props) => {
       }
     )
       .then((response) => response.json())
-      .then((response) => console.log(response));
+      .then((response) => console.log(response))
+      props.onHide();
 
     // console.log(response);
 
@@ -32,7 +33,7 @@ const AddNewWord = (props) => {
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    console.log("entered");
+    props.onShow();
     let enteredWord = addNewKeyword.current.value;
     if (enteredWord.trim().length > 0) {
       AddNewWordAPI(enteredWord);

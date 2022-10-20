@@ -7,20 +7,32 @@ import Loader from "./components/UI/Loader";
 
 function App() {
   const [results, setResults] = useState([]);
+  const [isLoader, setIsLoader] = useState(true);
 
   const searchResultHandler = (getResult) => {
     setResults(getResult);
   };
 
-  const showloaderHandler = () => {
-    
-  }
+  const hideLoaderHandler = () => {
+    setIsLoader(false);
+  };
+  const showLoaderHandler = () => {
+    setIsLoader(true);
+  };
   return (
     <Fragment>
-      <Loader showLoader={showloaderHandler}/>
-      <SearchBar setSearchResults={searchResultHandler} />
-      <AddNewWord />
-      <DictionaryListing result={results} />
+      <Loader showLoader={isLoader} />
+      <SearchBar
+        setSearchResults={searchResultHandler}
+        onHide={hideLoaderHandler}
+        onShow={showLoaderHandler}
+      />
+      <AddNewWord onHide={hideLoaderHandler} onShow={showLoaderHandler} />
+      <DictionaryListing
+        result={results}
+        onHide={hideLoaderHandler}
+        onShow={showLoaderHandler}
+      />
     </Fragment>
   );
 }
