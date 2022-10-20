@@ -1,0 +1,17 @@
+.singleWord {
+    padding: 30px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid #eee;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  .removeWord{
+    position: absolute;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: red;
+    cursor: pointer;
+  }

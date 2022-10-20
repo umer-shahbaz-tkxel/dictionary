@@ -1,0 +1,12 @@
+.searchBar {
+  padding: 2rem 0;
+}
+.searchBarWrapper {
+  position: relative;
+}
+.formControl {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.25rem;
+}
